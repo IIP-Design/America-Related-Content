@@ -1,0 +1,156 @@
+{
+    "key": "group_576198d20f8a3",
+    "title": "Related Content",
+    "fields": [
+        {
+            "key": "field_576198fb3e885",
+            "label": "Related Content",
+            "name": "america_related_content",
+            "type": "flexible_content",
+            "instructions": "Choose \"Relate by Taxonomy\" or \"Select Manually\". Default: Relate by Taxonomy",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Relate By...",
+            "min": "",
+            "max": 1,
+            "layouts": [
+                {
+                    "key": "5761a2c1207c5",
+                    "name": "america_relate_by_taxonomy",
+                    "label": "Relate by Taxonomy",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_5764487fdaea3",
+                            "label": "Number of related posts to display",
+                            "name": "america_number_of_related_posts",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 3,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_5761a2fa207c6",
+                            "label": "Related posts by",
+                            "name": "america_relate_by_taxonomy_select",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "category": "category",
+                                "post_tag": "post_tag",
+                                "post_format": "post_format"
+                            },
+                            "default_value": {
+                                "category": "category"
+                            },
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "disabled": 0,
+                            "readonly": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57629e2c643d7",
+                    "name": "america_relate_by_manually",
+                    "label": "Choose Manually",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_57629e83e8b92",
+                            "label": "",
+                            "name": "america_relate_by_manually_repeater",
+                            "type": "repeater",
+                            "instructions": "Select up to 3 items",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": "",
+                            "max": 3,
+                            "layout": "table",
+                            "button_label": "Add Post",
+                            "sub_fields": [
+                                {
+                                    "key": "field_57629f2e7ad05",
+                                    "label": "",
+                                    "name": "america_related_post",
+                                    "type": "post_object",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [],
+                                    "taxonomy": [],
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "return_format": "object",
+                                    "ui": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1466190273
+}
