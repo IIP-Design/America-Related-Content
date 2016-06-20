@@ -97,7 +97,7 @@ class America_Related_Content_Public {
 		if ( ! is_single() ) {
 			return;
 		}
-		
+
 		$data = $this->america_related_content();
 
 		$this->template_loader->set_template_data( $data, 'related_posts' );
@@ -197,7 +197,6 @@ class America_Related_Content_Public {
 		// Loop through each category
 		foreach( $categories as $category ) {
 			$args = array(
-				'posts_per_page' => $count,
 				'category' => $category,
 			);
 
@@ -286,6 +285,7 @@ class America_Related_Content_Public {
 		*
 		* @param $post_id Int - The current post's ID
 		* @param $posts Array - An array of post objects
+		* @param $count Int - The number of posts to limit the results to
 		*
 		* @return $posts Array - An array of post objects
 		* @since 1.0.0
