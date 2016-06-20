@@ -70,7 +70,7 @@ class America_Related_Content_Public {
 		*/
 
 	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_name, AMERICA_RELATED_CONTENT_DIR . 'css/america-related-content-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, AMERICA_RELATED_CONTENT_URL . 'public/css/america-related-content-public.css', array(), $this->version, 'all' );
 	}
 
 
@@ -81,7 +81,7 @@ class America_Related_Content_Public {
 		*/
 
 	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_name, AMERICA_RELATED_CONTENT_DIR . 'js/america-related-content-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, AMERICA_RELATED_CONTENT_URL . '/public/js/america-related-content-public.js', array( 'jquery' ), $this->version, false );
 	}
 
 
@@ -102,7 +102,10 @@ class America_Related_Content_Public {
 
 
 	/**
+		* The main function used to tie the whole thing together.
 		*
+		* @return $posts Array - An array of Wordpress post objects
+		* @since 1.0.0`
 		*/
 
 	private function america_related_content() {
@@ -141,7 +144,7 @@ class America_Related_Content_Public {
 
 
 	/**
-		* The the related posts based on taxonomy type
+		* The related posts based on taxonomy type
 		*
 		* @param $taxonomy String - Taxonomy type
 		*
@@ -187,18 +190,19 @@ class America_Related_Content_Public {
 		$posts = array();
 		$categories = wp_get_post_categories( $post_id );
 
+		// Loop through each category
 		foreach( $categories as $category ) {
 			$args = array(
 				'posts_per_page' => $count,
 				'category' => $category,
 			);
 
+			// Merge the query results with the $posts array to keep the array flat for easier sorting
 			$posts = array_merge( $posts, get_posts( $args ) );
 		}
 
-		$posts = $this->filter_current_post( $post_id, $posts );
-
-		$posts = array_slice( $posts, 0, $count );
+		// Remove the current post from the $posts array
+		$posts = $this->filter_results( $post_id, $posts, $count );
 
 		return $posts;
 	}
@@ -217,7 +221,7 @@ class America_Related_Content_Public {
 		$posts = array();
 		$tags = wp_get_post_tags( $post_id );
 
-		// Get just the `term_id` from the $tags objects
+		// Get just the `term_id` from the tag objects
 		$tags = array_map( function( $x ) { return $x->term_id; }, $tags );
 
 		$args = array(
@@ -232,9 +236,8 @@ class America_Related_Content_Public {
 
 		$posts = get_posts( $args );
 
-		$posts = $this->filter_current_post( $post_id, $posts );
-
-		$posts = array_slice( $posts, 0, $count );
+		// Remove the current post from the $posts array
+		$posts = $this->filter_results( $post_id, $posts, $count );
 
 		return $posts;
 	}
@@ -265,16 +268,17 @@ class America_Related_Content_Public {
 
 		$posts = get_posts( $args );
 
-		$posts = $this->filter_current_post( $post_id, $posts );
-
-		$posts = array_slice( $posts, 0, $count );
+		// Remove the current post from the $posts array
+		$posts = $this->filter_results( $post_id, $posts, $count );
 
 		return $posts;
 	}
 
 
 	/**
-		* Filter out the current post from the array of post objects
+		* Filter the array of posts. Primarily used to:
+		* 		* Limit results list to the number in the `america_number_of_related_posts` field,
+		* 		* Remove current post from the post list
 		*
 		* @param $post_id Int - The current post's ID
 		* @param $posts Array - An array of post objects
@@ -283,17 +287,37 @@ class America_Related_Content_Public {
 		* @since 1.0.0
 		*/
 
-	private function filter_current_post( $post_id, $posts ) {
+	private function filter_results( $post_id, $posts, $count ) {
 		if ( empty( $post_id ) || empty( $posts ) ) {
 			return $posts;
 		}
 
 		foreach( $posts as $key => $value ) {
+			$post_format = get_post_format( $value->ID );
+
+			// Remove current post from the results
 			if ( $value->ID === $post_id ) {
 				unset( $posts[$key] );
 			}
+
+			// @todo For now, hard code post format link removal
+			if ( $post_format === 'link' ) {
+				unset ( $posts[$key] );
+			}
 		}
 
+		// Only return the requested amount of posts
+		$posts = array_slice( $posts, 0, $count );
+
 		return $posts;
+	}
+
+
+	/**
+		* Add an image size for the plugin so that it's self contained
+		*/
+
+	public function add_image_sizes() {
+		add_image_size( 'related_thumb', 359, 269, true );
 	}
 }

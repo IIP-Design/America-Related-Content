@@ -1,4 +1,35 @@
-/**
- * All of the CSS for your public-facing functionality should be
- * included in this file.
- */
+.related-content-title {
+  border-top: 1px solid #444;
+  margin-top: 1.5em;
+  padding-top: 1.5em;
+}
+
+.related-post {
+  margin-bottom: 1em;
+}
+
+.related-entry-title {
+  line-height: 20px;
+  margin: 0;
+}
+
+.related-entry-title a {
+  font-size: 16px;
+}
+
+@media(min-width: 25em) {
+  .related-post-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .related-post {
+    flex-basis: 30%;
+    justify-content: flex-start;
+    margin: 0 1em 0 0;
+  }
+
+  .related-post:last-child {
+    margin: 0;
+  }
+}

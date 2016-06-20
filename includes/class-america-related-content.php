@@ -123,7 +123,7 @@ class America_Related_Content {
 		});
 
 		add_filter( 'acf/settings/dir', function() {
-			return plugin_dir_url( dirname( __FILE__ ) ) . 'includes/advanced-custom-fields/';
+			return AMERICA_RELATED_CONTENT_URL . 'includes/advanced-custom-fields/';
 		});
 
 		add_filter( 'acf/settings/save_json', function( $path ) {
@@ -191,6 +191,7 @@ class America_Related_Content {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 		$this->loader->add_action( 'tha_content_bottom', $plugin_public, 'america_related_content_activate' );
+		$this->loader->add_action( 'after_setup_theme', $plugin_public, 'add_image_sizes' );
 	}
 
 	/**

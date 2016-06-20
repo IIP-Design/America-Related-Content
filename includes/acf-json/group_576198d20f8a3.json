@@ -26,6 +26,27 @@
                     "display": "table",
                     "sub_fields": [
                         {
+                            "key": "field_5767e5c711572",
+                            "label": "Block title",
+                            "name": "related_content_block_title",
+                            "type": "text",
+                            "instructions": "For example \"Related Content\" or \"Suggested for You\"",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Related Content",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
                             "key": "field_5764487fdaea3",
                             "label": "Number of related posts to display",
                             "name": "america_number_of_related_posts",
@@ -88,11 +109,32 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_5767f6af37d2b",
+                            "label": "Block title",
+                            "name": "related_content_block_title",
+                            "type": "text",
+                            "instructions": "For example \"Related Content\" or \"Suggested for You\"",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Related Content",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
                             "key": "field_57629e83e8b92",
                             "label": "",
                             "name": "america_relate_by_manually_repeater",
                             "type": "repeater",
-                            "instructions": "Select up to 3 items",
+                            "instructions": "Select posts",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -102,7 +144,7 @@
                             },
                             "collapsed": "",
                             "min": "",
-                            "max": 3,
+                            "max": 0,
                             "layout": "table",
                             "button_label": "Add Post",
                             "sub_fields": [
@@ -152,5 +194,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1466190273
+    "modified": 1466435880
 }

@@ -19,7 +19,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 // Constants
 define( 'AMERICA_RELATED_CONTENT_DIR', plugin_dir_path( dirname( __FILE__ ) ) . 'america-related-content/' );
-
+define( 'AMERICA_RELATED_CONTENT_URL', plugin_dir_url( dirname( __FILE__ ) ) . 'america-related-content/' );
 
 
 function activate_america_related_content() {
