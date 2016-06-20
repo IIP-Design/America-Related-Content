@@ -296,6 +296,7 @@ class America_Related_Content_Public {
 			return $posts;
 		}
 
+		// Remove any duplicates from the $posts array
 		$posts = array_unique( $posts, SORT_REGULAR );
 
 		foreach( $posts as $key => $value ) {
