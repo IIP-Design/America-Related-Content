@@ -94,6 +94,10 @@ class America_Related_Content_Public {
 			return;
 		}
 
+		if ( ! is_single() ) {
+			return;
+		}
+		
 		$data = $this->america_related_content();
 
 		$this->template_loader->set_template_data( $data, 'related_posts' );
