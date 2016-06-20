@@ -296,6 +296,8 @@ class America_Related_Content_Public {
 			return $posts;
 		}
 
+		$posts = array_unique( $posts, SORT_REGULAR );
+
 		foreach( $posts as $key => $value ) {
 			$post_format = get_post_format( $value->ID );
 

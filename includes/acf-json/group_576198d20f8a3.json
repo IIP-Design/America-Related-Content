@@ -38,7 +38,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Related Content",
+                            "default_value": "You May Also Like",
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
@@ -194,5 +194,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1466444892
+    "modified": 1466445875
 }
