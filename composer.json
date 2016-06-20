@@ -1,0 +1,15 @@
+{
+    "name": "usstatedept/america-related-content",
+    "type": "wordpress-plugin",
+    "description" : "A plugin for relating content by taxonomies",
+    "authors": [
+        {
+            "name": "Office of Design, U.S. Department of State",
+            "email": "kleekampnf@america.gov"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+       "composer/installers": "~1.0"
+    }
+}
