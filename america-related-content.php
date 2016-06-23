@@ -3,7 +3,7 @@
 /**********************************************************************************************************
 Plugin Name:    America Related Content
 Description:    A simple plugin that loads content from within the same taxonomy as a post or page
-Version:        1.0.0
+Version:        1.0.1
 Author:         Office of Design, U.S. Department of State
 License:        MIT
 Text Domain:    america
