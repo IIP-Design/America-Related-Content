@@ -194,9 +194,10 @@ class America_Related_Content_Public {
 		$posts = array();
 		$categories = wp_get_post_categories( $post_id );
 
-		// Loop through each category
+		// Loop through each category and get all results
 		foreach( $categories as $category ) {
 			$args = array(
+				'post_per_page' => -1,
 				'category' => $category,
 			);
 
