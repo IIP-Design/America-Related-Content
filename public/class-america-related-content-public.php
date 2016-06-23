@@ -100,6 +100,10 @@ class America_Related_Content_Public {
 
 		$data = $this->america_related_content();
 
+		if ( empty ( $data ) ) {
+			return;
+		}
+
 		$this->template_loader->set_template_data( $data, 'related_posts' );
 		$this->template_loader->get_template_part( 'related-content' );
 	}

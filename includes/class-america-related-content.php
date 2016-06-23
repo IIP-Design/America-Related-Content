@@ -79,7 +79,7 @@ class America_Related_Content {
 
 	public function __construct() {
 		$this->plugin_name = 'america-related-content';
-		$this->version = '1.0.1';
+		$this->version = '1.0.2';
 
 		$this->load_dependencies();
 		$this->set_locale();
