@@ -69,7 +69,7 @@ class America_Related_Content_Admin {
 		*/
 
 	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_name, AMERICA_RELATED_CONTENT_DIR . 'css/america-related-content-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, AMERICA_RELATED_CONTENT_URL . 'admin/css/america-related-content-admin.css', array(), $this->version, 'all' );
 	}
 
 
@@ -80,7 +80,7 @@ class America_Related_Content_Admin {
 		*/
 
 	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_name, AMERICA_RELATED_CONTENT_DIR . 'js/america-related-content-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, AMERICA_RELATED_CONTENT_URL . 'admin/js/america-related-content-admin.js', array( 'jquery' ), $this->version, false );
 	}
 
 
