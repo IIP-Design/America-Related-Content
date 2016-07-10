@@ -8,7 +8,6 @@
   */
 ?>
 
-
 <section class="related-content">
   <h2 class="related-content-title">
     <?php while ( have_rows( 'america_related_content' ) ) : the_row();
